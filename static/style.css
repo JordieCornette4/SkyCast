@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #4facfe 0%, #00c6fb 50%, #87ceeb 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #222;
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 6px;
+}
+
+.tagline {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid #d8e9ff;
+    border-radius: 14px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #2196F3;
+}
+
+.search-box button {
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.search-box button:hover {
+    background: #1976D2;
+}
+
+.search-box button:active {
+    transform: scale(0.97);
+}
+
+.result {
+    min-height: 260px;
+}
+
+.welcome-card,
+.weather-card {
+    background: #f7fbff;
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+}
+
+.weather-card img {
+    width: 110px;
+    height: 110px;
+}
+
+.weather-card h2 {
+    margin-bottom: 10px;
+}
+
+.weather-card p {
+    margin: 8px 0;
+    font-size: 17px;
+}
+
+.error {
+    color: #d32f2f;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    margin-top: 25px;
+    text-align: center;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+footer p:first-child {
+    font-weight: bold;
+    margin-bottom: 4px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast v1.1</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🌤 SkyCast</h1>
+        <p class="tagline">Fast, simple weather on Android</p>
+    </header>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="city"
+            placeholder="Search for a city..."
+            autocomplete="off"
+        >
+
+        <button onclick="getWeather()">
+            Search
+        </button>
+    </div>
+
+    <div id="result" class="result">
+        <div class="welcome-card">
+            <h2>Welcome!</h2>
+            <p>Enter a city above to view the current weather.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>SkyCast Version 1.1</p>
+        <p>Built entirely on Android with Termux ❤️</p>
+    </footer>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
