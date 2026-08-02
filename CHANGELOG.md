@@ -1,19 +1,32 @@
 # SkyCast Changelog
 
-## Version 1.2 (In Development)
-- Preparing forecast support
-- Added config.py for API key management
-- Added CHANGELOG.md
-- Backend refactor planned
+## Version 1.2.0 (In Progress)
 
-## Version 1.1
-- Glassmorphism UI
-- Better loading states
-- Improved search experience
-- Enter key support
-- Mobile UI improvements
+### Added
+- Config file
+- Changelog
+- Project organization
+- Forecast development started
 
-## Version 1.0
+### Planned
+- 7-day forecast
+- Hourly forecast
+- Sunrise & Sunset
+- Better UI
+
+---
+
+## Version 1.1.0
+
+- Improved interface
+- Better loading
+- Enter key search
+- Mobile improvements
+
+---
+
+## Version 1.0.0
+
 - Current weather
 - City search
 - Temperature

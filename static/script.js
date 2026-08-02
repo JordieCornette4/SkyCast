@@ -33,6 +33,16 @@ async function getWeather() {
             return;
         }
 
+        const sunrise = new Date(data.sunrise * 1000).toLocaleTimeString([], {
+            hour: "numeric",
+            minute: "2-digit"
+        });
+
+        const sunset = new Date(data.sunset * 1000).toLocaleTimeString([], {
+            hour: "numeric",
+            minute: "2-digit"
+        });
+
         result.innerHTML = `
             <div class="weather-card">
 
@@ -46,12 +56,14 @@ async function getWeather() {
                 <h3>${data.description}</h3>
 
                 <p>🌡 Temperature: <strong>${data.temperature}°F</strong></p>
-
                 <p>🤗 Feels Like: <strong>${data.feels_like}°F</strong></p>
-
                 <p>💧 Humidity: <strong>${data.humidity}%</strong></p>
-
-                <p>💨 Wind Speed: <strong>${data.wind} mph</strong></p>
+                <p>💨 Wind: <strong>${data.wind} mph</strong></p>
+                <p>🌡 Pressure: <strong>${data.pressure} hPa</strong></p>
+                <p>☁ Cloud Cover: <strong>${data.clouds}%</strong></p>
+                <p>👀 Visibility: <strong>${data.visibility} km</strong></p>
+                <p>🌅 Sunrise: <strong>${sunrise}</strong></p>
+                <p>🌇 Sunset: <strong>${sunset}</strong></p>
 
             </div>
         `;
@@ -66,7 +78,7 @@ async function getWeather() {
     }
 }
 
-document.getElementById("city").addEventListener("keydown", function (event) {
+document.getElementById("city").addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         getWeather();
     }
