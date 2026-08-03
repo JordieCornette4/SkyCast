@@ -2,7 +2,7 @@
 SkyCast
 
 Weather Module
-Version: 1.4.0
+Version: 1.5.0
 */
 
 async function getWeather() {
@@ -57,10 +57,16 @@ async function getWeather() {
                 <p>🌅 Sunrise: ${sunrise}</p>
                 <p>🌇 Sunset: ${sunset}</p>
 
+                <button
+                    class="favorite-button"
+                    onclick="addFavorite('${data.city}')"
+                >
+                    ⭐ Save to Favorites
+                </button>
+
             </div>
         `;
 
-        // Load the forecast after the current weather.
         await loadForecast(city);
 
     } catch (error) {
