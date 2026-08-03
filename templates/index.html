@@ -3,47 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyCast v1.1</title>
+    <title>SkyCast</title>
 
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-<div class="container">
+    <main class="container">
 
-    <header>
-        <h1>🌤 SkyCast</h1>
-        <p class="tagline">Fast, simple weather on Android</p>
-    </header>
+        <header>
+            <h1>🌤 SkyCast</h1>
+            <p>Your simple weather companion.</p>
+        </header>
 
-    <div class="search-box">
-        <input
-            type="text"
-            id="city"
-            placeholder="Search for a city..."
-            autocomplete="off"
-        >
+        <section class="search-card">
 
-        <button onclick="getWeather()">
-            Search
-        </button>
-    </div>
+            <input
+                id="city"
+                type="text"
+                placeholder="Search for a city..."
+                autocomplete="off"
+            >
 
-    <div id="result" class="result">
-        <div class="welcome-card">
-            <h2>Welcome!</h2>
-            <p>Enter a city above to view the current weather.</p>
-        </div>
-    </div>
+            <button onclick="getWeather()">
+                Search
+            </button>
 
-    <footer>
-        <p>SkyCast Version 1.1</p>
-        <p>Built entirely on Android with Termux ❤️</p>
-    </footer>
+        </section>
 
-</div>
+        <section id="result">
 
-<script src="/static/script.js"></script>
+            <div class="welcome-card">
+
+                <h2>Welcome!</h2>
+
+                <p>
+                    Enter a city above to see the latest weather.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="/static/script.js"></script>
 
 </body>
 </html>

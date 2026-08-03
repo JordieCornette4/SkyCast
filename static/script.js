@@ -1,44 +1,60 @@
+/*
+SkyCast
+Version: 1.2.0
+*/
+
 async function getWeather() {
-    const cityInput = document.getElementById("city");
+
+    const city = document.getElementById("city").value.trim();
     const result = document.getElementById("result");
 
-    const city = cityInput.value.trim();
-
     if (!city) {
+
         result.innerHTML = `
             <div class="error">
-                Please enter a city name.
+                Please enter a city.
             </div>
         `;
+
         return;
     }
 
     result.innerHTML = `
         <div class="welcome-card">
-            <h2>⏳ Loading...</h2>
-            <p>Getting the latest weather for ${city}.</p>
+            <h2>Loading...</h2>
+            <p>Getting weather for <strong>${city}</strong>.</p>
         </div>
     `;
 
     try {
-        const response = await fetch(`/weather?city=${encodeURIComponent(city)}`);
+
+        const response = await fetch(
+            `/weather?city=${encodeURIComponent(city)}`
+        );
+
         const data = await response.json();
 
         if (data.error) {
+
             result.innerHTML = `
                 <div class="error">
                     ${data.error}
                 </div>
             `;
+
             return;
         }
 
-        const sunrise = new Date(data.sunrise * 1000).toLocaleTimeString([], {
+        const sunrise = new Date(
+            data.sunrise * 1000
+        ).toLocaleTimeString([], {
             hour: "numeric",
             minute: "2-digit"
         });
 
-        const sunset = new Date(data.sunset * 1000).toLocaleTimeString([], {
+        const sunset = new Date(
+            data.sunset * 1000
+        ).toLocaleTimeString([], {
             hour: "numeric",
             minute: "2-digit"
         });
@@ -55,31 +71,45 @@ async function getWeather() {
 
                 <h3>${data.description}</h3>
 
-                <p>🌡 Temperature: <strong>${data.temperature}°F</strong></p>
-                <p>🤗 Feels Like: <strong>${data.feels_like}°F</strong></p>
-                <p>💧 Humidity: <strong>${data.humidity}%</strong></p>
-                <p>💨 Wind: <strong>${data.wind} mph</strong></p>
-                <p>🌡 Pressure: <strong>${data.pressure} hPa</strong></p>
-                <p>☁ Cloud Cover: <strong>${data.clouds}%</strong></p>
-                <p>👀 Visibility: <strong>${data.visibility} km</strong></p>
-                <p>🌅 Sunrise: <strong>${sunrise}</strong></p>
-                <p>🌇 Sunset: <strong>${sunset}</strong></p>
+                <p>🌡 Temperature: ${data.temperature}°</p>
+
+                <p>🤗 Feels Like: ${data.feels_like}°</p>
+
+                <p>💧 Humidity: ${data.humidity}%</p>
+
+                <p>💨 Wind: ${data.wind}</p>
+
+                <p>🌡 Pressure: ${data.pressure} hPa</p>
+
+                <p>☁ Cloud Cover: ${data.clouds}%</p>
+
+                <p>👀 Visibility: ${data.visibility} km</p>
+
+                <p>🌅 Sunrise: ${sunrise}</p>
+
+                <p>🌇 Sunset: ${sunset}</p>
 
             </div>
         `;
 
     } catch (error) {
+
         result.innerHTML = `
             <div class="error">
-                Unable to connect to the weather service.<br><br>
-                Please check your internet connection and try again.
+                Unable to connect to SkyCast.
             </div>
         `;
+
     }
+
 }
 
-document.getElementById("city").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        getWeather();
-    }
-});
+document
+    .getElementById("city")
+    .addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+            getWeather();
+        }
+
+    });
