@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>SkyCast</title>
 
-    <link rel="stylesheet" href="/static/style.css">
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
 </head>
+
 <body>
 
     <main class="container">
 
         <header>
+
             <h1>🌤 SkyCast</h1>
+
             <p>Your simple weather companion.</p>
+
         </header>
 
         <section class="search-card">
@@ -25,7 +39,7 @@
                 autocomplete="off"
             >
 
-            <button onclick="getWeather()">
+            <button id="search-button">
                 Search
             </button>
 
@@ -33,20 +47,36 @@
 
         <section id="result">
 
-            <div class="welcome-card">
+            <section id="weather-container">
 
-                <h2>Welcome!</h2>
+                <div class="welcome-card">
 
-                <p>
-                    Enter a city above to see the latest weather.
-                </p>
+                    <h2>Welcome!</h2>
 
-            </div>
+                    <p>
+                        Enter a city above to see the latest weather.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <section id="forecast-container">
+
+            </section>
 
         </section>
 
     </main>
 
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/ui.js"></script>
+    <script src="/static/js/weather.js"></script>
+
+    <!-- Coming next -->
+    <script src="/static/js/forecast.js"></script>
+
+    <!-- Starts the application -->
     <script src="/static/script.js"></script>
 
 </body>
