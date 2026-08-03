@@ -2,10 +2,10 @@
 SkyCast
 
 Forecast Module
-Version: 1.3.1
+Version: 1.4.0
 */
 
-function formatForecastTime(dateText) {
+function formatForecastDate(dateText) {
 
     const date = new Date(dateText);
 
@@ -23,17 +23,33 @@ async function loadForecast(city) {
 
     container.innerHTML = `
         <div class="welcome-card">
-            <p>Loading forecast...</p>
+            <p>Loading 5-day forecast...</p>
         </div>
     `;
 
     try {
 
-        const forecast = await fetchForecast(city);
+        const data = await fetchForecast(city);
 
-        if (!Array.isArray(forecast)) {
+        if (data.error) {
 
-            container.innerHTML = "";
+            container.innerHTML = `
+                <div class="error">
+                    ${data.error}
+                </div>
+            `;
+
+            return;
+
+        }
+
+        if (!Array.isArray(data) || data.length === 0) {
+
+            container.innerHTML = `
+                <div class="welcome-card">
+                    <p>No forecast available.</p>
+                </div>
+            `;
 
             return;
 
@@ -41,18 +57,17 @@ async function loadForecast(city) {
 
         let html = `
             <section class="forecast-section">
-
                 <h2>5-Day Forecast</h2>
 
                 <div class="forecast-grid">
         `;
 
-        forecast.slice(0, 8).forEach(item => {
+        data.slice(0, 8).forEach(item => {
 
             html += `
                 <div class="forecast-card">
 
-                    <strong>${formatForecastTime(item.time)}</strong>
+                    <strong>${formatForecastDate(item.time)}</strong>
 
                     <img
                         src="https://openweathermap.org/img/wn/${item.icon}@2x.png"
@@ -63,7 +78,11 @@ async function loadForecast(city) {
 
                     <p>🌡 ${item.temperature}°</p>
 
-                    <p>💨 ${item.wind}</p>
+                    <p>🤗 Feels Like: ${item.feels_like}°</p>
+
+                    <p>💧 ${item.humidity}% Humidity</p>
+
+                    <p>💨 ${item.wind} Wind</p>
 
                 </div>
             `;
@@ -72,7 +91,6 @@ async function loadForecast(city) {
 
         html += `
                 </div>
-
             </section>
         `;
 
@@ -84,7 +102,7 @@ async function loadForecast(city) {
 
         container.innerHTML = `
             <div class="error">
-                Unable to load the forecast.
+                Unable to load forecast.
             </div>
         `;
 
