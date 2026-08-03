@@ -2,12 +2,18 @@
 SkyCast
 
 Weather Module
-Version: 1.5.0
+Version: 1.6.2
 */
 
-async function getWeather() {
+const RECENT_SEARCHES_KEY = "skycast-recent-searches";
+const MAX_RECENT_SEARCHES = 5;
 
-    const city = document.getElementById("city").value.trim();
+async function getWeather(cityOverride = null) {
+
+    const city =
+        typeof cityOverride === "string"
+            ? cityOverride
+            : document.getElementById("city").value.trim();
 
     if (!city) {
         showError("Please enter a city.");
@@ -25,6 +31,11 @@ async function getWeather() {
             return;
         }
 
+        if (typeof cityOverride !== "string") {
+            saveRecentSearch(city);
+            renderRecentSearches();
+        }
+
         const sunrise = new Date(data.sunrise * 1000).toLocaleTimeString([], {
             hour: "numeric",
             minute: "2-digit"
@@ -35,7 +46,7 @@ async function getWeather() {
             minute: "2-digit"
         });
 
-        document.getElementById("weather-container").innerHTML = `
+        getWeatherContainer().innerHTML = `
             <div class="weather-card">
 
                 <h2>${data.city}, ${data.country}</h2>
@@ -76,5 +87,27 @@ async function getWeather() {
         showError("Unable to load weather.");
 
     }
+
+}
+
+
+function saveRecentSearch(city) {
+
+    let searches = JSON.parse(
+        localStorage.getItem(RECENT_SEARCHES_KEY) || "[]"
+    );
+
+    searches = searches.filter(
+        item => item.toLowerCase() !== city.toLowerCase()
+    );
+
+    searches.unshift(city);
+
+    searches = searches.slice(0, MAX_RECENT_SEARCHES);
+
+    localStorage.setItem(
+        RECENT_SEARCHES_KEY,
+        JSON.stringify(searches)
+    );
 
 }
