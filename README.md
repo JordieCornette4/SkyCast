@@ -1,55 +1,111 @@
 # 🌤 SkyCast
 
-SkyCast is a free and open-source weather application built entirely on an Android phone using **Termux**, **Python**, and **Flask**.
+SkyCast is a modern weather application built with **Python**, **Flask**, **HTML**, **CSS**, and **JavaScript**.
 
-## Features
+It provides current weather conditions and a 5-day forecast using the OpenWeather API while focusing on a clean interface and a modular codebase.
+
+---
+
+## ✨ Features
 
 - 🌤 Current weather
-- 🔎 City search
-- 📱 Mobile-friendly interface
-- ⚡ Fast and lightweight
+- 📅 5-day forecast
+- ⭐ Favorite cities
+- 📱 Responsive design
+- 🧩 Modular frontend
+- 🐍 Modular Flask backend
+- 🔄 Git version control
 
-## Tech Stack
+---
 
-- Python
+## 🛠 Built With
+
+- Python 3
 - Flask
-- HTML
-- CSS
-- JavaScript
+- HTML5
+- CSS3
+- JavaScript (ES6)
 - OpenWeather API
-- Git
-- GitHub
+- Git & GitHub
 
-## Project Goals
+---
 
-- Clean and maintainable code
-- Small, focused source files
-- Stable versioned releases
-- Android-first development
-- Beginner-friendly project structure
+## 🚀 Installation
 
-## Roadmap
+Clone the repository:
 
-### v1.2.0
-- Foundation release
-- Project cleanup
-- Richer weather details
+```bash
+git clone https://github.com/YOUR_USERNAME/SkyCast.git
+```
 
-### v1.3.0
-- Weather forecast
+Open the project:
 
-### v1.4.0
-- GPS location
+```bash
+cd SkyCast
+```
 
-### v1.5.0
-- Favorite cities
+Install dependencies:
 
-### v1.6.0
-- Dark mode
+```bash
+pip install -r requirements.txt
+```
 
-### v2.0.0
-- Progressive Web App (PWA)
+Run SkyCast:
 
-## License
+```bash
+python app.py
+```
 
-Released under the MIT License.
+Open your browser:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## 📁 Project Structure
+
+```
+SkyCast/
+├── app.py
+├── config.py
+├── skycast/
+├── static/
+│   ├── js/
+│   └── style.css
+├── templates/
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🗺 Roadmap
+
+### Version 1.5
+
+- ✅ Current weather
+- ✅ 5-day forecast
+- ✅ Favorite cities
+
+### Planned
+
+- 📍 Current location
+- 🌙 Dark mode
+- 🔍 Recent searches
+- 🌦 Animated weather backgrounds
+- 📱 Progressive Web App (PWA)
+- ⚠️ Weather alerts
+
+---
+
+## 📜 License
+
+This project is open source and available under the MIT License.
+
+---
+
+## 👨‍💻 Developer
+
+Created by **Jordie Cornette**.
