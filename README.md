@@ -1,10 +1,13 @@
-🌤 SkyCast
+<p align="center">
+  <img src="assets/skycast-logo.png" alt="SkyCast Logo" width="220">
+</p><h1 align="center">🌤 SkyCast</h1><p align="center">
+  A modern weather application built with Python, Flask, HTML, CSS, and JavaScript.
+</p><p align="center">"Python" (https://img.shields.io/badge/Python-3-blue?logo=python)
+"Flask" (https://img.shields.io/badge/Flask-Web_App-black?logo=flask)
+"JavaScript" (https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)
+"License" (https://img.shields.io/badge/License-MIT-green)
 
-SkyCast is a modern weather application built with Python, Flask, HTML, CSS, and JavaScript.
-
-It provides current weather conditions and a 5-day forecast using the OpenWeather API while focusing on a clean interface, responsive design, and a modular codebase.
-
----
+</p>---
 
 ✨ Features
 
@@ -49,7 +52,7 @@ Start the application:
 
 python app.py
 
-Open your browser and visit:
+Open your browser:
 
 http://127.0.0.1:5000
 
@@ -61,7 +64,10 @@ SkyCast/
 ├── app.py
 ├── config.py
 ├── requirements.txt
+├── LICENSE
 ├── README.md
+├── assets/
+│   └── skycast-logo.png
 ├── skycast/
 │   ├── __init__.py
 │   ├── weather.py
@@ -69,6 +75,8 @@ SkyCast/
 ├── static/
 │   ├── style.css
 │   ├── script.js
+│   ├── images/
+│   │   └── skycast-logo.png
 │   └── js/
 │       ├── api.js
 │       ├── ui.js
@@ -92,7 +100,7 @@ SkyCast/
 - Modular frontend
 - Modular backend
 
-🚀 Planned Features
+🚀 Planned
 
 - 📍 Use My Location
 - 🌙 Dark Mode
@@ -100,13 +108,12 @@ SkyCast/
 - 🌦 Animated weather backgrounds
 - 📱 Progressive Web App (PWA)
 - ⚠️ Weather alerts
-- 🌎 Additional weather data and customization
 
 ---
 
 🤝 Contributing
 
-Contributions, suggestions, and bug reports are welcome. Feel free to fork the repository, create a new branch, and submit a pull request.
+Contributions, suggestions, bug reports, and improvements are welcome.
 
 ---
 
