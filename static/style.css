@@ -1,6 +1,6 @@
 /*
 SkyCast
-Version: 1.2.0
+Version: 1.3.1
 */
 
 * {
@@ -18,7 +18,7 @@ body {
 
 .container {
     width: 95%;
-    max-width: 700px;
+    max-width: 900px;
     margin: 30px auto;
 }
 
@@ -110,6 +110,45 @@ header p {
     text-align: center;
 }
 
+/* Forecast */
+
+.forecast-section {
+    margin-top: 25px;
+}
+
+.forecast-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 15px;
+}
+
+.forecast-card {
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.forecast-card img {
+    width: 70px;
+    height: 70px;
+}
+
+.forecast-card p {
+    margin: 6px 0;
+}
+
+.forecast-card strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
 @media (max-width: 600px) {
 
     .search-card {
@@ -122,6 +161,10 @@ header p {
 
     header h1 {
         font-size: 2rem;
+    }
+
+    .forecast-grid {
+        grid-template-columns: 1fr;
     }
 
 }
