@@ -1,34 +1,43 @@
-# SkyCast Changelog
+SkyCast Changelog
 
-## Version 1.2.0 (In Progress)
-
-### Added
-- Config file
-- Changelog
-- Project organization
-- Forecast development started
-
-### Planned
-- 7-day forecast
-- Hourly forecast
-- Sunrise & Sunset
-- Better UI
+All notable changes to this project will be documented in this file.
 
 ---
 
-## Version 1.1.0
+v1.2.0 (Foundation Release) - In Progress
 
-- Improved interface
-- Better loading
-- Enter key search
-- Mobile improvements
+Added
+
+- Reorganized project structure
+- Improved documentation
+- GitHub development workflow
+- Foundation for future features
+
+Changed
+
+- Standardized project files
+- Adopted complete file replacement workflow
 
 ---
 
-## Version 1.0.0
+v1.1.0
+
+Added
+
+- Improved user interface
+- Better project organization
+- API configuration
+- GitHub repository
+
+---
+
+v1.0.0
+
+Initial Release
 
 - Current weather
 - City search
 - Temperature
 - Humidity
 - Wind speed
+- Flask backend
