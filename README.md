@@ -1,24 +1,24 @@
-# 🌤 SkyCast
+🌤 SkyCast
 
-SkyCast is a modern weather application built with **Python**, **Flask**, **HTML**, **CSS**, and **JavaScript**.
+SkyCast is a modern weather application built with Python, Flask, HTML, CSS, and JavaScript.
 
-It provides current weather conditions and a 5-day forecast using the OpenWeather API while focusing on a clean interface and a modular codebase.
+It provides current weather conditions and a 5-day forecast using the OpenWeather API while focusing on a clean interface, responsive design, and a modular codebase.
 
 ---
 
-## ✨ Features
+✨ Features
 
 - 🌤 Current weather
 - 📅 5-day forecast
 - ⭐ Favorite cities
 - 📱 Responsive design
-- 🧩 Modular frontend
+- 🧩 Modular frontend architecture
 - 🐍 Modular Flask backend
-- 🔄 Git version control
+- 🔄 Git & GitHub version control
 
 ---
 
-## 🛠 Built With
+🛠 Built With
 
 - Python 3
 - Flask
@@ -26,86 +26,98 @@ It provides current weather conditions and a 5-day forecast using the OpenWeathe
 - CSS3
 - JavaScript (ES6)
 - OpenWeather API
-- Git & GitHub
+- Git
+- GitHub
 
 ---
 
-## 🚀 Installation
+🚀 Installation
 
 Clone the repository:
 
-```bash
-git clone https://github.com/YOUR_USERNAME/SkyCast.git
-```
+git clone https://github.com/JordieCornette4/SkyCast.git
 
-Open the project:
+Move into the project folder:
 
-```bash
 cd SkyCast
-```
 
-Install dependencies:
+Install the required packages:
 
-```bash
 pip install -r requirements.txt
-```
 
-Run SkyCast:
+Start the application:
 
-```bash
 python app.py
-```
 
-Open your browser:
+Open your browser and visit:
 
-```
 http://127.0.0.1:5000
-```
 
 ---
 
-## 📁 Project Structure
+📁 Project Structure
 
-```
 SkyCast/
 ├── app.py
 ├── config.py
-├── skycast/
-├── static/
-│   ├── js/
-│   └── style.css
-├── templates/
 ├── requirements.txt
-└── README.md
-```
+├── README.md
+├── skycast/
+│   ├── __init__.py
+│   ├── weather.py
+│   └── forecast.py
+├── static/
+│   ├── style.css
+│   ├── script.js
+│   └── js/
+│       ├── api.js
+│       ├── ui.js
+│       ├── weather.js
+│       ├── forecast.js
+│       └── favorites.js
+└── templates/
+    ├── index.html
+    └── 404.html
 
 ---
 
-## 🗺 Roadmap
+🗺 Roadmap
 
-### Version 1.5
+✅ Completed
 
-- ✅ Current weather
-- ✅ 5-day forecast
-- ✅ Favorite cities
+- Current weather
+- 5-day forecast
+- Favorite cities
+- Responsive interface
+- Modular frontend
+- Modular backend
 
-### Planned
+🚀 Planned Features
 
-- 📍 Current location
-- 🌙 Dark mode
-- 🔍 Recent searches
+- 📍 Use My Location
+- 🌙 Dark Mode
+- 🔍 Recent Searches
 - 🌦 Animated weather backgrounds
 - 📱 Progressive Web App (PWA)
 - ⚠️ Weather alerts
+- 🌎 Additional weather data and customization
 
 ---
 
-## 📜 License
+🤝 Contributing
 
-This project is open source and available under the MIT License.
+Contributions, suggestions, and bug reports are welcome. Feel free to fork the repository, create a new branch, and submit a pull request.
 
 ---
 
-## 👨‍💻 Developer
+📄 License
 
-Created by **Jordie Cornette**.
+This project is licensed under the MIT License.
+
+---
+
+👨‍💻 Developer
+
+Created and maintained by Jordie Cornette.
+
+GitHub: https://github.com/JordieCornette4
