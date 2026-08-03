@@ -2,13 +2,12 @@
 SkyCast
 
 Weather Module
-Version: 1.3.0
+Version: 1.4.0
 */
 
 async function getWeather() {
 
-    const cityInput = document.getElementById("city");
-    const city = cityInput.value.trim();
+    const city = document.getElementById("city").value.trim();
 
     if (!city) {
         showError("Please enter a city.");
@@ -23,9 +22,6 @@ async function getWeather() {
 
         if (data.error) {
             showError(data.error);
-
-            document.getElementById("forecast-container").innerHTML = "";
-
             return;
         }
 
@@ -41,6 +37,7 @@ async function getWeather() {
 
         document.getElementById("weather-container").innerHTML = `
             <div class="weather-card">
+
                 <h2>${data.city}, ${data.country}</h2>
 
                 <img
@@ -59,19 +56,18 @@ async function getWeather() {
                 <p>👀 Visibility: ${data.visibility} km</p>
                 <p>🌅 Sunrise: ${sunrise}</p>
                 <p>🌇 Sunset: ${sunset}</p>
+
             </div>
         `;
 
-        // Forecast temporarily disabled while we debug.
-        // await loadForecast(city);
+        // Load the forecast after the current weather.
+        await loadForecast(city);
 
     } catch (error) {
 
         console.error(error);
 
-        showError("Unable to connect to SkyCast.");
-
-        document.getElementById("forecast-container").innerHTML = "";
+        showError("Unable to load weather.");
 
     }
 

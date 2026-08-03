@@ -2,21 +2,25 @@
 SkyCast
 
 API Module
-Version: 1.3.0
+Version: 1.4.0
 */
 
-async function fetchWeather(city) {
+async function apiRequest(endpoint, city) {
+
     const response = await fetch(
-        `/weather?city=${encodeURIComponent(city)}`
+        `/${endpoint}?city=${encodeURIComponent(city)}`
     );
 
-    return await response.json();
+    const data = await response.json();
+
+    return data;
+
+}
+
+async function fetchWeather(city) {
+    return await apiRequest("weather", city);
 }
 
 async function fetchForecast(city) {
-    const response = await fetch(
-        `/forecast?city=${encodeURIComponent(city)}`
-    );
-
-    return await response.json();
+    return await apiRequest("forecast", city);
 }

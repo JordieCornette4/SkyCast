@@ -2,27 +2,48 @@
 SkyCast
 
 Forecast Module
-Version: 1.3.0
+Version: 1.3.1
 */
+
+function formatForecastTime(dateText) {
+
+    const date = new Date(dateText);
+
+    return date.toLocaleString([], {
+        weekday: "short",
+        hour: "numeric",
+        minute: "2-digit"
+    });
+
+}
 
 async function loadForecast(city) {
 
     const container = document.getElementById("forecast-container");
 
-    container.innerHTML = "<p>Loading forecast...</p>";
+    container.innerHTML = `
+        <div class="welcome-card">
+            <p>Loading forecast...</p>
+        </div>
+    `;
 
     try {
 
         const forecast = await fetchForecast(city);
 
-        if (forecast.error) {
+        if (!Array.isArray(forecast)) {
+
             container.innerHTML = "";
+
             return;
+
         }
 
         let html = `
-            <div class="forecast-section">
+            <section class="forecast-section">
+
                 <h2>5-Day Forecast</h2>
+
                 <div class="forecast-grid">
         `;
 
@@ -31,10 +52,10 @@ async function loadForecast(city) {
             html += `
                 <div class="forecast-card">
 
-                    <p><strong>${item.time}</strong></p>
+                    <strong>${formatForecastTime(item.time)}</strong>
 
                     <img
-                        src="https://openweathermap.org/img/wn/${item.icon}.png"
+                        src="https://openweathermap.org/img/wn/${item.icon}@2x.png"
                         alt="${item.description}"
                     >
 
@@ -51,7 +72,8 @@ async function loadForecast(city) {
 
         html += `
                 </div>
-            </div>
+
+            </section>
         `;
 
         container.innerHTML = html;

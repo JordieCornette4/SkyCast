@@ -2,51 +2,51 @@
 SkyCast
 
 UI Module
-Version: 1.3.1
+Version: 1.4.0
 */
 
-function weatherContainer() {
+function getWeatherContainer() {
     return document.getElementById("weather-container");
 }
 
-function forecastContainer() {
+function getForecastContainer() {
     return document.getElementById("forecast-container");
 }
 
 function showLoading(city) {
 
-    weatherContainer().innerHTML = `
+    getWeatherContainer().innerHTML = `
         <div class="welcome-card">
             <h2>Loading...</h2>
             <p>Getting weather for <strong>${city}</strong>...</p>
         </div>
     `;
 
-    forecastContainer().innerHTML = "";
+    getForecastContainer().innerHTML = "";
 
 }
 
 function showError(message) {
 
-    weatherContainer().innerHTML = `
+    getWeatherContainer().innerHTML = `
         <div class="error">
             ${message}
         </div>
     `;
 
-    forecastContainer().innerHTML = "";
+    getForecastContainer().innerHTML = "";
 
 }
 
 function showWelcome() {
 
-    weatherContainer().innerHTML = `
+    getWeatherContainer().innerHTML = `
         <div class="welcome-card">
             <h2>Welcome!</h2>
             <p>Enter a city above to see the latest weather.</p>
         </div>
     `;
 
-    forecastContainer().innerHTML = "";
+    getForecastContainer().innerHTML = "";
 
 }
