@@ -1,22 +1,55 @@
 # 🌤 SkyCast
 
-SkyCast is a free weather app built entirely on an Android phone using Termux.
+SkyCast is a free and open-source weather application built entirely on an Android phone using **Termux**, **Python**, and **Flask**.
 
 ## Features
 
-- Current weather
-- City search
-- Mobile-friendly interface
-- Built with Flask
+- 🌤 Current weather
+- 🔎 City search
+- 📱 Mobile-friendly interface
+- ⚡ Fast and lightweight
+
+## Tech Stack
+
+- Python
+- Flask
+- HTML
+- CSS
+- JavaScript
+- OpenWeather API
+- Git
+- GitHub
+
+## Project Goals
+
+- Clean and maintainable code
+- Small, focused source files
+- Stable versioned releases
+- Android-first development
+- Beginner-friendly project structure
 
 ## Roadmap
 
-- Version 1.2 - Forecast support
-- Version 1.3 - GPS location
-- Version 1.4 - Favorite cities
-- Version 1.5 - Dark mode
-- Version 2.0 - Progressive Web App
+### v1.2.0
+- Foundation release
+- Project cleanup
+- Richer weather details
+
+### v1.3.0
+- Weather forecast
+
+### v1.4.0
+- GPS location
+
+### v1.5.0
+- Favorite cities
+
+### v1.6.0
+- Dark mode
+
+### v2.0.0
+- Progressive Web App (PWA)
 
 ## License
 
-MIT
+Released under the MIT License.
